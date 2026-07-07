@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicii profesionale de instalații electrice și automatizări industriale în București și Ilfov. Electricieni autorizați pentru proiecte rezidențiale și industriale.">
+    <title>Electric București | Instalații Electrice & Automatizări</title>
+    <style>
+        :root {
+            --primary-color: #0f172a; /* Bleumarin închis profesional */
+            --accent-color: #f59e0b;  /* Galben/Chihlimbar electric pentru accente */
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Navigație */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color: #d97706;
+        }
+
+        /* Secțiuni Generale */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Servicii Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--light-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top-color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-card ul {
+            list-style-type: none;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Despre / Atuuri */
+        .about-bg {
+            background-color: var(--light-bg);
+            max-width: 100%;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #1e293b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplificat pentru mobil */
+            section { padding: 3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigație -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Electric<span>București</span></a>
+            <nav class="nav-links">
+                <a href="#servicii">Servicii</a>
+                <a href="#despre">Despre Noi</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Instalații Electrice și Automatizări Industriale în București & Ilfov</h1>
+            <p>Servicii profesionale executate la cele mai înalte standarde de siguranță. De la tablouri electrice rezidențiale până la sisteme complexe de automatizare industrială.</p>
+            <a href="tel:+40700000000" class="btn-cta">⚡ Sunați Acum: 07xx xxx xxx</a>
+        </div>
+    </section>
+
+    <!-- Servicii -->
+    <section id="servicii">
+        <h2 class="section-title">Serviciile Noastre</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Instalații Rezidențiale</h3>
+                <ul>
+                    <li>Cablare completă case și apartamente</li>
+                    <li>Montaj și înlocuire tablouri electrice</li>
+                    <li>Sisteme de iluminat inteligent și LED</li>
+                    <li>Remedieri defecțiuni și circuite noi</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Automatizări & Industrial</h3>
+                <ul>
+                    <li>Proiectare și asamblare tablouri de automatizare</li>
+                    <li>Mentenanță linii de producție și utilaje</li>
+                    <li>Cablare industrială și trasee de cabluri</li>
+                    <li>Soluții de eficiență energetică pentru firme</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Verificări & Siguranță</h3>
+                <ul>
+                    <li>Măsurători PRAM și împământări</li>
+                    <li>Sisteme de protecție la supratensiune</li>
+                    <li>Consultanță tehnică de specialitate</li>
+                    <li>Intervenții și suport tehnic</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Despre Noi -->
+    <div class="about-bg">
+        <section id="despre">
+            <h2 class="section-title">De Ce Să Ne Alegeți Pe Noi?</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Oferim servicii electrice complete, punând accent pe **calitatea execuției, siguranța instalației și respectarea normativelor tehnice în vigoare**.</p>
+                <p style="font-size: 1.1rem;">Fie că ai nevoie de modificarea instalației din apartament sau de implementarea unui sistem de automatizare pentru o stație de procesare, echipa noastră abordează fiecare proiect cu rigoare tehnică și profesionalism.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Contactați-ne</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Suntem gata să te ajutăm!</h3>
+                <p>Ai un proiect în plan sau o urgență electrică? Trimite-ne un mesaj sau sună-ne direct pentru o evaluare gratuită.</p>
+                <p><strong>📍 Zonă acoperită:</strong> București (Toate sectoarele) și Județul Ilfov</p>
+                <p><strong>📞 Telefon:</strong> <a href="tel:+40700000000" style="color: var(--primary-color); font-weight: bold;">07xx xxx xxx</a></p>
+                <p><strong>✉️ Email:</strong> contact@electricbucuresti.ro</p>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="Numele tău" required>
+                <input type="email" placeholder="Adresa de email" required>
+                <textarea rows="5" placeholder="Detalii despre proiectul tău..." required></textarea>
+                <button type="submit">Trimite Mesajul</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ElectricBucurești.ro. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>
