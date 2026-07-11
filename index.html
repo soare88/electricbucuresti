@@ -3,34 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric București - Instalații și Automatizări</title>
+    <title>Electric București - Automatizări Industriale</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background: #003366; color: white; padding: 3rem 1rem; text-align: center; }
-        nav { background: #333; padding: 1rem; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 20px; text-align: center; }
-        .btn { background: #ff9900; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
-        footer { text-align: center; padding: 2rem; background: #f4f4f4; margin-top: 2rem; }
+        :root { 
+            --primary: #0f172a; 
+            --secondary: #2563eb; 
+            --accent: #f59e0b; 
+            --text: #334155; 
+            --bg: #f8fafc; 
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Meniu de navigare */
+        header { background-color: var(--primary); padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--secondary); }
+        .logo { color: white; font-size: 1.5rem; font-weight: 800; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: var(--secondary); }
+        nav a { color: #cbd5e1; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 1.1rem; transition: color 0.3s; }
+        nav a:hover { color: white; }
+        
+        /* Secțiunea principală cu imagine (Hero) */
+        .hero { 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop') center/cover; 
+            color: white; padding: 120px 5%; text-align: center; 
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px; color: #94a3b8; }
+        .btn { background-color: var(--secondary); color: white; padding: 16px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; transition: background 0.3s, transform 0.2s; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn:hover { background-color: #1d4ed8; transform: translateY(-2px); }
+        
+        /* Secțiunea de servicii (Carduri) */
+        .services { padding: 80px 5%; text-align: center; }
+        .services h2 { font-size: 2.5rem; margin-bottom: 50px; color: var(--primary); }
+        .cards { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .card { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: left; transition: transform 0.3s; border-top: 5px solid var(--accent); }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.6rem; }
+        .card p { color: #64748b; margin-bottom: 25px; font-size: 1.05rem; }
+        .card-link { color: var(--secondary); text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 5px; }
+        .card-link:hover { color: #1d4ed8; }
+        
+        /* Subsol (Footer) */
+        footer { background: var(--primary); color: #64748b; text-align: center; padding: 30px; margin-top: 40px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+
+    <!-- Antet și Meniu -->
     <header>
-        <h1>Electric București & Ilfov</h1>
-        <p>Soluții complete pentru instalații electrice și automatizări industriale</p>
+        <a href="index.html" class="logo">ELECTRIC<span>BUCUREȘTI</span></a>
+        <nav>
+            <a href="index.html">Acasă</a>
+            <a href="automatizari.html">Automatizări</a>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html">Acasă</a>
-        <a href="automatizari.html">Automatizări</a>
-        <a href="instalatii.html">Instalații</a>
-    </nav>
-    <div class="container">
-        <h2>Bine ați venit!</h2>
-        <p>Suntem specializați în servicii electrice profesionale pentru segmentul industrial și rezidențial în București și județul Ilfov. Garantăm siguranță, eficiență și conformitate.</p>
-        <a href="mailto:contact@electricbucuresti.ro" class="btn">Solicită o ofertă</a>
-    </div>
+    
+    <!-- Banner Principal cu Imagine -->
+    <section class="hero">
+        <h1>Sisteme de Automatizări Industriale</h1>
+        <p>Proiectare, execuție și mentenanță pentru sisteme complexe de automatizare în București și Ilfov. Creștem eficiența și siguranța proceselor tale industriale.</p>
+        <a href="tel:0700000000" class="btn">Sună pentru o consultație tehnică</a>
+    </section>
+
+    <!-- Secțiunea de Servicii -->
+    <section class="services">
+        <h2>Expertiza Noastră Tehnică</h2>
+        <div class="cards">
+            
+            <!-- Card 1: Automatizări -->
+            <div class="card">
+                <h3>Automatizări Industriale</h3>
+                <p>Implementăm soluții de control la nivel industrial. Programare, cablare și integrare pentru linii de producție și echipamente specifice.</p>
+                <a href="automatizari.html" class="card-link">Vezi detalii despre automatizări &rarr;</a>
+            </div>
+
+            <!-- Card 2: Tablouri/Instalații -->
+            <div class="card">
+                <h3>Tablouri de Comandă</h3>
+                <p>Asamblăm și configurăm tablouri de automatizare și forță, respectând cu strictețe normele tehnice de siguranță și funcționare.</p>
+                <a href="automatizari.html" class="card-link">Află mai multe &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Subsol -->
     <footer>
-        <p>&copy; 2026 Electric București. Toate drepturile rezervate.</p>
+        <p>&copy; 2026 Electric București - Automatizări Industriale. Toate drepturile rezervate.</p>
     </footer>
+
 </body>
 </html>
