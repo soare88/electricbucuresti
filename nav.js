@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
         <a href="index.html" class="logo">electric<span>bucuresti.ro</span></a>
         <nav>
             <a href="index.html">Acasă</a>
-            <a href="trasee-electrice.html">Trasee & Circuite</a>
+            <a href="rezidential.html">Rezidențial</a>
+            <a href="industrial.html">Industrial</a>
+            <a href="hvac.html">HVAC</a>
+            <a href="comercial.html">Comercial</a>
+            <a href="curenti-slabi.html">Curenți Slabi</a>
             <a href="tel:0765948524" style="color:var(--accent-yellow)">0765 948 524</a>
         </nav>
     </header>`;
