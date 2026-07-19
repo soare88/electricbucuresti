@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     const footer = `
     <footer>
-        <p>Contact: <a href="mailto:soare.soare88@gmail.com" style="color:var(--text-light)">soare.soare88@gmail.com</a> | Tel: 0765 948 524</p>
+        <p>Contact: <a href="mailto:contact@electricbucuresti.ro" style="color:var(--text-light)">contact@electricbucuresti.ro</a> | Tel: 0765 948 524</p>
         <p>&copy; 2026 electricbucuresti.ro - Execuție Instalații Electrice.</p>
     </footer>`;
 
