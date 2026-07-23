@@ -1,117 +1,159 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0b0f19;
-    color: #f3f4f6;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+:root {
+    --bg-main: #090d16;
+    --bg-card: #111827;
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.4);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border: #1e293b;
 }
 
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* Meniu superior fix cu efect de transparență modern (Glassmorphism) */
 .navbar {
-    background-color: #111827;
-    padding: 1rem 2rem;
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.25rem 2.5rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    border-bottom: 1px solid #1f2937;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar a {
-    color: #60a5fa;
+    color: #93c5fd;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
 }
 
 .navbar a:hover {
-    color: #93c5fd;
-    text-decoration: underline;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(147, 197, 253, 0.5);
 }
 
 main {
-    max-width: 1000px;
-    margin: 3rem auto;
-    padding: 0 2rem;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
 }
 
+/* Secțiunea principală (Hero) cu accent vizual */
 .hero-local {
-    background-color: #111827;
-    padding: 2.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid #1f2937;
-    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--bg-card) 0%, #1e1b4b 100%);
+    padding: 3.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-local::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
 }
 
 .hero-local h1 {
-    font-size: 2.2rem;
+    font-size: 2.75rem;
+    font-weight: 800;
     color: #ffffff;
     margin-top: 0;
     margin-bottom: 1rem;
+    letter-spacing: -0.025em;
 }
 
 .hero-local p {
-    font-size: 1.1rem;
-    color: #9ca3af;
-    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 800px;
 }
 
+/* Buton cu efect luminos la trecerea cursorului */
 .cta-button {
-    display: inline-block;
-    background-color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.375rem;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    font-weight: 600;
+    box-shadow: 0 4px 14px var(--accent-glow);
+    transition: all 0.25s ease;
 }
 
 .cta-button:hover {
-    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
+/* Carduri de conținut stilizate */
 .content-local {
-    background-color: #111827;
-    padding: 2.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid #1f2937;
+    background-color: var(--bg-card);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
 .content-local h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #ffffff;
     margin-top: 0;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #1f2937;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
 }
 
-.content-local p {
-    color: #d1d5db;
+.content-local p, .content-local li {
+    color: #cbd5e1;
+    font-size: 1.05rem;
 }
 
 .content-local ul {
-    margin-top: 1rem;
-    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+    padding-left: 1.2rem;
 }
 
 .content-local li {
-    margin-bottom: 0.75rem;
-    color: #d1d5db;
+    margin-bottom: 0.875rem;
 }
 
+/* Subsol modern */
 footer {
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-    border-top: 1px solid #1f2937;
-    color: #9ca3af;
-    background-color: #111827;
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    background-color: var(--bg-card);
 }
 
 footer a {
-    color: #60a5fa;
+    color: #93c5fd;
     text-decoration: none;
 }
 
