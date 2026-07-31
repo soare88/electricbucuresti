@@ -10,13 +10,20 @@ class HeaderPrincipal extends HTMLElement {
                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html">Acasă</a></li>
-                        <li><a href="instalatii.html">Instalații</a></li>
-                        <li><a href="rezidential.html">Rezidențial</a></li>
-                        <li><a href="industrial.html">Industrial</a></li>
-                        <li><a href="comercial.html">Comercial</a></li>
-                        <li><a href="hvac.html">HVAC</a></li>
-                        <li><a href="curenti-slabi.html">Curenți Slabi</a></li>
-                        <li><a href="trasee-electrice.html">Trasee Electrice</a></li>
+                        
+                        <!-- Meniul Derulant (Dropdown) -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Servicii ▼</a>
+                            <div class="dropdown-content">
+                                <a href="instalatii.html">Instalații Generale</a>
+                                <a href="industrial.html">Industrial</a>
+                                <a href="rezidential.html">Rezidențial</a>
+                                <a href="comercial.html">Comercial</a>
+                                <a href="hvac.html">HVAC</a>
+                                <a href="curenti-slabi.html">Curenți Slabi</a>
+                            </div>
+                        </li>
+
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
