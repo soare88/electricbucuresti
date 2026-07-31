@@ -21,6 +21,10 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Adăugat pentru derulare fină pe pagină */
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-light);
@@ -129,8 +133,8 @@ header {
     font-weight: bold;
     border-radius: 6px;
     margin-top: 20px;
-    text-align: center; /* Asigură că textul pe 2 rânduri este centrat frumos */
-    line-height: 1.4; /* Spațiu corect între rânduri la buton */
+    text-align: center;
+    line-height: 1.4; 
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
     box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
 }
@@ -294,6 +298,6 @@ footer a:hover {
 
     .cta-button {
         font-size: 1rem;
-        padding: 14px 20px; /* Buton un pic mai înalt pentru ecrane mici */
+        padding: 14px 20px;
     }
 }
