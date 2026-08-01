@@ -1,19 +1,18 @@
-// 1. Inserare Favicon (Iconița site-ului)
-const favicon = document.createElement('link');
-favicon.rel = 'icon';
-favicon.type = 'image/png';
-// Fiindcă scriptul rulează în interiorul paginilor HTML din folderul principal,
-// va găsi imaginea logo.png direct lângă ele.
-favicon.href = 'logo.png'; 
-document.head.appendChild(favicon);
+// =======================================================
+// SEO GLOBAL & FAVICON - ELECTRIC BUCUREȘTI
+// =======================================================
 
-// 2. Inserare Google Analytics (gtag)
-const gtagScript = document.createElement('script');
-gtagScript.async = true;
-gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X7DSDSM475';
-document.head.appendChild(gtagScript);
+(function() {
+    // Detectează automat dacă pagina curentă se află în folderul "locatii"
+    const isLocalPage = window.location.pathname.includes('/locatii/');
+    const faviconPath = isLocalPage ? '../logo.png' : 'logo.png';
 
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-X7DSDSM475');
+    // Creează și inserează elementul favicon în <head>
+    const faviconLink = document.createElement('link');
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/png';
+    faviconLink.href = faviconPath;
+    document.head.appendChild(faviconLink);
+
+    // Aici poți adăuga ulterior și alte scripturi globale (de ex. Google Analytics / GTM)
+})();
