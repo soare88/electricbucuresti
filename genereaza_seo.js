@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+// Folderul unde se vor salva automat cele 500 de pagini
+const outputFolder = path.join(__dirname, 'locatii');
+if (!fs.existsSync(outputFolder)) {
+    fs.mkdirSync(outputFolder);
+}
+
 // Lista serviciilor principale
 const services = [
     { slug: 'instalatii-electrice', name: 'Instalații Electrice' },
@@ -28,28 +34,14 @@ const zones = [
     'unirii', 'vacaresti', 'vatra-luminoasa', 'vitan', 'voluntari'
 ];
 
-// Citirea șabloanelor header și footer (dacă există)
-let header = '';
-let footer = '';
-
-try {
-    header = fs.readFileSync('header.html', 'utf8');
-} catch (e) {
-    header = '<header><h1>Electric București</h1></header>';
-}
-
-try {
-    footer = fs.readFileSync('footer.html', 'utf8');
-} catch (e) {
-    footer = '<footer><p>Contact: 0765 948 524 | soare.soare88@gmail.com</p></footer>';
-}
-
 let generatedCount = 0;
+let locationUrls = []; // Aici salvăm linkurile corecte pentru Sitemap
 
-// Generarea paginilor HTML pentru fiecare combinație serviciu - zonă
+// 1. Generarea paginilor HTML modernizate
 services.forEach(service => {
     zones.forEach(zone => {
         const fileName = `${service.slug}-${zone}.html`;
+        const filePath = path.join(outputFolder, fileName);
         const zoneTitle = zone.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         
         const htmlContent = `<!DOCTYPE html>
@@ -59,10 +51,14 @@ services.forEach(service => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${service.name} în ${zoneTitle} | Electric București</title>
     <meta name="description" content="Servicii profesionale de ${service.name.toLowerCase()} în zona ${zoneTitle}, București și Ilfov. Intervenții rapide, electrician autorizat. Sună la 0765 948 524!">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Linkurile au "../" pentru că paginile se află acum în interiorul folderului "locatii" -->
+    <link rel="stylesheet" href="../style.css">
+    <script src="../seo/seo-global.js"></script>
 </head>
 <body>
-    ${header}
+    <header-principal></header-principal>
+    
     <main>
         <section class="hero-local">
             <h1>${service.name} în ${zoneTitle}</h1>
@@ -79,29 +75,43 @@ services.forEach(service => {
             </ul>
         </section>
     </main>
-    ${footer}
+    
+    <footer-principal></footer-principal>
+    <script src="../componente.js"></script>
 </body>
 </html>`;
 
-        fs.writeFileSync(fileName, htmlContent);
+        fs.writeFileSync(filePath, htmlContent);
+        locationUrls.push(`locatii/${fileName}`); // Salvăm structura corectă de link
         generatedCount++;
     });
 });
 
-console.log(`Succes! Au fost generate ${generatedCount} pagini SEO locale.`);
+console.log(`Succes! Au fost generate/modernizate ${generatedCount} pagini în folderul "locatii".`);
 
-// Generarea automată a fișierului sitemap.xml incluzând toate fișierele HTML din folder
-const files = fs.readdirSync(__dirname);
-const htmlFiles = files.filter(file => file.endsWith('.html'));
-
+// 2. Generarea Sitemap-ului Inteligent
 let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
 sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-htmlFiles.forEach(file => {
-    sitemap += `  <url>\n    <loc>https://electricbucuresti.ro/${file}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+// Găsim automat paginile tale principale (index, industrial etc.)
+const rootFiles = fs.readdirSync(__dirname);
+const mainHtmlFiles = rootFiles.filter(file => {
+    return file.endsWith('.html') && 
+           file !== 'template-seo.html' && 
+           file !== 'google9b2c0b860c1c52ca.html';
+});
+
+// Punem paginile principale în harta Google
+mainHtmlFiles.forEach(file => {
+    sitemap += `  <url>\n    <loc>https://electricbucuresti.ro/${file}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+});
+
+// Punem cele 500 de pagini locale în harta Google
+locationUrls.forEach(urlPath => {
+    sitemap += `  <url>\n    <loc>https://electricbucuresti.ro/${urlPath}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
 });
 
 sitemap += '</urlset>';
 
 fs.writeFileSync('sitemap.xml', sitemap);
-console.log(`Sitemap actualizat automat cu ${htmlFiles.length} pagini!`);
+console.log(`Sitemap creat perfect cu ${mainHtmlFiles.length} pagini principale și ${locationUrls.length} pagini de cartier!`);
