@@ -1,295 +1,62 @@
-/* =======================================================
-   ELECTRIC BUCUREȘTI - STYLESHEET COMPLET
-   ======================================================= */
+// =======================================================
+// SETARE FAVICON VECTORIAL (CERC ALBASTRU CU FULGER)
+// =======================================================
+(function() {
+    const faviconLink = document.createElement('link');
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/svg+xml';
+    faviconLink.href = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="%232563eb"/><path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="%23fbbf24"/></svg>`;
+    document.head.appendChild(faviconLink);
+})();
 
-:root {
-    --bg-main: #0d0e12;       
-    --bg-card: #16181d;       
-    --text-light: #f8fafc;    
-    --text-muted: #94a3b8;    
-    --accent-yellow: #fbbf24; 
-    --accent-hover: #f59e0b;  
-    --border-glass: rgba(255, 255, 255, 0.08); 
-}
+// =======================================================
+// COMPONENTE WEB: HEADER ȘI FOOTER
+// =======================================================
+class HeaderPrincipal extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <header>
+                <div class="header-inner" style="max-width: 1200px; width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="logo-container">
+                        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
+                            <svg width="34" height="34" viewBox="0 0 32 32" style="flex-shrink: 0;"><circle cx="16" cy="16" r="16" fill="#2563eb"/><path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="#fbbf24"/></svg>
+                            <span style="font-size: 1.25rem; font-weight: bold; color: #ffffff; letter-spacing: -0.5px;">Electric București</span>
+                        </a>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Acasă</a></li>
+                            
+                            <!-- Meniul Derulant (Dropdown) -->
+                            <li class="dropdown">
+                                <a href="#" class="dropbtn">Servicii ▼</a>
+                                <div class="dropdown-content">
+                                    <a href="instalatii.html">Instalații Generale</a>
+                                    <a href="industrial.html">Industrial</a>
+                                    <a href="rezidential.html">Rezidențial</a>
+                                    <a href="comercial.html">Comercial</a>
+                                    <a href="hvac.html">HVAC</a>
+                                    <a href="curenti-slabi.html">Curenți Slabi</a>
+                                </div>
+                            </li>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-main);
-    color: var(--text-light);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-}
-
-main, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel"] {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-body > h1:first-of-type {
-    margin-top: 60px; 
-}
-
-h1 {
-    font-size: 2.6rem;
-    color: var(--accent-yellow);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-}
-
-h2 {
-    font-size: 2rem;
-    color: var(--text-light);
-    margin-top: 50px;
-    margin-bottom: 25px;
-    border-bottom: 1px solid var(--border-glass);
-    padding-bottom: 15px;
-}
-
-h3 {
-    font-size: 1.25rem;
-    color: var(--accent-yellow);
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-a[href^="tel:"] {
-    display: inline-block;
-    background: var(--accent-yellow);
-    color: #000 !important;
-    padding: 14px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 30px; 
-    text-decoration: none;
-    margin: 20px auto 40px auto;
-    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
-    transition: all 0.3s ease;
-}
-
-a[href^="tel:"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
-    background: var(--accent-hover);
-}
-
-/* Listele de conținut din pagină */
-main ul, .container ul {
-    list-style: none;
-    margin: 30px auto;
-    max-width: 900px;
-    background: var(--bg-card);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-glass);
-}
-
-main ul li, .container ul li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 35px;
-    color: var(--text-light);
-    font-size: 1.05rem;
-}
-
-main ul li:last-child, .container ul li:last-child {
-    margin-bottom: 0;
-}
-
-main ul li::before, .container ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--accent-yellow);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* =======================================================
-   HEADER ȘI MENIU (Aliniere perfectă pe verticală)
-   ======================================================= */
-header {
-    background-color: rgba(22, 24, 29, 0.95);
-    backdrop-filter: blur(10px); 
-    border-bottom: 1px solid var(--border-glass);
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo-container a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 12px;
-}
-
-.logo-container span {
-    letter-spacing: -0.5px;
-}
-
-.main-nav ul {
-    list-style: none !important;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-    align-items: center;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.main-nav ul li {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-}
-
-.main-nav ul li::before {
-    display: none !important; 
-}
-
-.main-nav ul li a {
-    color: var(--text-light);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: inline-block;
-}
-
-.main-nav ul li a:hover, .dropbtn:hover {
-    color: var(--accent-yellow);
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    flex-direction: column; 
-    background-color: var(--bg-card);
-    min-width: 240px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
-    border: 1px solid var(--border-glass);
-    border-radius: 8px;
-    top: 100%;
-    left: 0;
-    margin-top: 10px;
-    z-index: 1000;
-}
-
-.dropdown-content::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background: transparent;
-}
-
-.dropdown-content a {
-    color: var(--text-light) !important;
-    padding: 14px 20px !important;
-    font-weight: 500 !important;
-    border-bottom: 1px solid var(--border-glass);
-    transition: background 0.2s ease, padding-left 0.2s ease;
-    text-transform: none !important;
-    display: block !important;
-    width: 100%;
-}
-
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-    color: var(--accent-yellow) !important;
-    padding-left: 25px !important; 
-}
-
-.dropdown:hover .dropdown-content {
-    display: flex; 
-}
-
-footer {
-    background-color: var(--bg-card);
-    color: var(--text-muted);
-    text-align: center;
-    padding: 30px 20px;
-    border-top: 1px solid var(--border-glass);
-    margin-top: 60px;
-}
-
-footer a {
-    color: var(--accent-yellow);
-    text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-    
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .dropdown-content {
-        position: relative;
-        box-shadow: none;
-        border: none;
-        background-color: transparent;
-        margin-top: 0;
-        padding-left: 15px;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .dropdown-content a {
-        padding: 10px 0 !important;
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        `;
     }
 }
+customElements.define('header-principal', HeaderPrincipal);
+
+class FooterPrincipal extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <footer>
+                <p>&copy; 2026 ElectricBucuresti.ro | Email: <a href="mailto:soare.soare88@gmail.com">soare.soare88@gmail.com</a> | Telefon: <a href="tel:0765948524">0765 948 524</a></p>
+            </footer>
+        `;
+    }
+}
+customElements.define('footer-principal', FooterPrincipal);
