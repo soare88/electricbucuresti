@@ -1,14 +1,12 @@
 // =======================================================
-// SETARE FAVICON AUTOMAT PENTRU TOATE PAGINILE
+// SETARE FAVICON VECTORIAL (CERC ALBASTRU CU FULGER)
 // =======================================================
 (function() {
-    const isLocalPage = window.location.pathname.includes('/locatii/');
-    const faviconPath = isLocalPage ? '../logo.png' : 'logo.png';
-
     const faviconLink = document.createElement('link');
     faviconLink.rel = 'icon';
-    faviconLink.type = 'image/png';
-    faviconLink.href = faviconPath;
+    faviconLink.type = 'image/svg+xml';
+    // Generează instant un cerc albastru (#2563eb) cu fulger auriu (#fbbf24)
+    faviconLink.href = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="%232563eb"/><path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="%23fbbf24"/></svg>`;
     
     document.head.appendChild(faviconLink);
 })();
