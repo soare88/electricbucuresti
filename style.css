@@ -89,7 +89,6 @@ a[href^="tel:"]:hover {
     background: var(--accent-hover);
 }
 
-/* Listele de conținut din pagină */
 main ul, .container ul {
     list-style: none;
     margin: 30px auto;
@@ -170,6 +169,8 @@ header {
     padding: 0 !important;
     background: transparent !important;
     border: none !important;
+    display: flex;
+    align-items: center;
 }
 
 .main-nav ul li::before {
@@ -184,7 +185,9 @@ header {
     letter-spacing: 0.5px;
     text-decoration: none;
     transition: color 0.3s ease;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .main-nav ul li a:hover, .dropbtn:hover {
@@ -193,7 +196,8 @@ header {
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex !important;
+    align-items: center;
 }
 
 .dropdown-content {
@@ -230,6 +234,7 @@ header {
     text-transform: none !important;
     display: block !important;
     width: 100%;
+    height: auto !important;
 }
 
 .dropdown-content a:last-child {
