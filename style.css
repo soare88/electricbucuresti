@@ -1,143 +1,184 @@
-:root {
-    --bg-main: #121212;
-    --bg-card: #1e1e1e;
-    --text-light: #ffffff;
-    --text-muted: #b0b0b0;
-    --accent-yellow: #ffc107;
-    --border-glass: rgba(255, 255, 255, 0.1);
-}
+/* =======================================================
+   ELECTRIC BUCUREȘTI - STYLESHEET PRINCIPAL (style.css)
+   ======================================================= */
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-light);
+/* Reset & Box Sizing */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
-main {
-    padding: 20px;
+/* Base Body Styles (Obsidian Dark Theme) */
+body {
+    background-color: #0b0b0b;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography & Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37; /* Auriu tehnic / Accenți */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #cccccc;
+    word-break: break-word;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #121212;
+    border-bottom: 1px solid #222222;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+/* Sub-meniuri / Dropdown */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+}
+
+nav ul li ul li {
+    list-style: none;
+    padding: 0.3rem 1rem;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Main Container & Layout */
+main, .container {
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.hero-local {
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #888888;
     text-align: center;
-    padding: 60px 20px;
-}
-
-.hero-local h1 {
-    font-size: 2.5rem;
-    color: var(--accent-yellow);
-    margin-bottom: 15px;
-}
-
-.hero-local p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 800px;
-    margin: 0 auto 25px auto;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-yellow);
-    color: #121212;
-    padding: 12px 25px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #e0a800;
-}
-
-.content-local {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-glass);
-    padding: 40px;
-    border-radius: 8px;
-    margin-top: 30px;
-}
-
-.content-local h2 {
-    color: var(--accent-yellow);
-    margin-bottom: 20px;
-}
-
-.content-local ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: var(--text-muted);
-}
-
-.content-local li {
-    margin-bottom: 10px;
+    padding: 2rem;
+    border-top: 1px solid #222222;
+    margin-top: 3rem;
 }
 
 /* =======================================================
-   BUTON FLOTANT WHATSAPP
+   STILURI SPECIFICE PENTRU DETECȚIA DE DISPOZITIV
    ======================================================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #ffffff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    z-index: 1005;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+
+/* Afișare pe Mobil (Clasă adaugată automat de scriptul SEO) */
+body.is-mobile nav ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #20ba5a;
+body.is-mobile nav ul li {
+    list-style: none !important;
 }
 
-.whatsapp-float svg {
-    width: 34px;
-    height: 34px;
-    fill: #ffffff;
+body.is-mobile header {
+    padding: 1rem;
 }
 
-/* =======================================================
-   SECȚIUNEA FAQ (ÎNTREBĂRI FRECVENTE)
-   ======================================================= */
-.faq-section {
-    margin-top: 50px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 5%;
+body.is-mobile .hero {
+    padding: 2rem 0.5rem;
 }
 
-.faq-item {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-glass);
-    border-radius: 6px;
-    margin-bottom: 15px;
-    padding: 20px 25px;
+body.is-mobile .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
 }
 
-.faq-item h3 {
-    color: var(--accent-yellow);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+body.is-mobile .hero p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
 }
 
-.faq-item p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 0;
+/* Afișare pe Tabletă */
+body.is-tablet nav ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body.is-tablet nav ul li {
+    list-style: none !important;
+}
+
+/* Media Queries Globale de Siguranță */
+@media screen and (max-width: 768px) {
+    nav ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-direction: column;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
