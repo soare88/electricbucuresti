@@ -2,7 +2,6 @@
 // SETARE FAVICON AUTOMAT PENTRU TOATE PAGINILE
 // =======================================================
 (function() {
-    // Verificăm dacă suntem într-o pagină din folderul /locatii/ pentru a seta calea corectă
     const isLocalPage = window.location.pathname.includes('/locatii/');
     const faviconPath = isLocalPage ? '../logo.png' : 'logo.png';
 
@@ -11,7 +10,6 @@
     faviconLink.type = 'image/png';
     faviconLink.href = faviconPath;
     
-    // Adăugăm faviconul în secțiunea <head> a paginii
     document.head.appendChild(faviconLink);
 })();
 
