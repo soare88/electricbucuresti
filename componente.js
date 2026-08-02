@@ -1,3 +1,23 @@
+// =======================================================
+// SETARE FAVICON AUTOMAT PENTRU TOATE PAGINILE
+// =======================================================
+(function() {
+    // Verificăm dacă suntem într-o pagină din folderul /locatii/ pentru a seta calea corectă
+    const isLocalPage = window.location.pathname.includes('/locatii/');
+    const faviconPath = isLocalPage ? '../logo.png' : 'logo.png';
+
+    const faviconLink = document.createElement('link');
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/png';
+    faviconLink.href = faviconPath;
+    
+    // Adăugăm faviconul în secțiunea <head> a paginii
+    document.head.appendChild(faviconLink);
+})();
+
+// =======================================================
+// COMPONENTE WEB: HEADER ȘI FOOTER
+// =======================================================
 class HeaderPrincipal extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
