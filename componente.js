@@ -27,7 +27,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-main, .container, body > h1, body > h2, body > h3, body > p, body > ul, body > a[href^="tel"] {
+main, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel"] {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -89,16 +89,18 @@ a[href^="tel:"]:hover {
     background: var(--accent-hover);
 }
 
-ul {
+/* Listele de conținut din pagină */
+main ul, .container ul {
     list-style: none;
     margin: 30px auto;
+    max-width: 900px;
     background: var(--bg-card);
     padding: 30px;
     border-radius: 12px;
     border: 1px solid var(--border-glass);
 }
 
-ul li {
+main ul li, .container ul li {
     margin-bottom: 15px;
     position: relative;
     padding-left: 35px;
@@ -106,11 +108,11 @@ ul li {
     font-size: 1.05rem;
 }
 
-ul li:last-child {
+main ul li:last-child, .container ul li:last-child {
     margin-bottom: 0;
 }
 
-ul li::before {
+main ul li::before, .container ul li::before {
     content: '✓';
     position: absolute;
     left: 0;
@@ -120,7 +122,7 @@ ul li::before {
 }
 
 /* =======================================================
-   HEADER ȘI MENIU (Aliniere perfectă)
+   HEADER ȘI MENIU (Aliniere perfectă pe verticală)
    ======================================================= */
 header {
     background-color: rgba(22, 24, 29, 0.95);
@@ -154,21 +156,24 @@ header {
 .main-nav ul {
     list-style: none !important;
     display: flex;
+    flex-wrap: nowrap;
     gap: 30px;
     align-items: center;
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .main-nav ul li {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
 }
 
 .main-nav ul li::before {
-    display: none; 
+    display: none !important; 
 }
 
 .main-nav ul li a {
@@ -206,7 +211,6 @@ header {
     z-index: 1000;
 }
 
-/* Pod invizibil pentru a menține meniul deschis când muți cursorul */
 .dropdown-content::before {
     content: '';
     position: absolute;
