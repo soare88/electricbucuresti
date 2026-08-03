@@ -169,14 +169,14 @@ a[href^="tel:"]:hover {
     }
 
     .phone-float {
-        bottom: 78px;
+        bottom: 84px;
         right: 16px;
         width: 52px;
         height: 52px;
     }
 
     .email-float {
-        bottom: 140px;
+        bottom: 152px;
         right: 16px;
         width: 52px;
         height: 52px;
