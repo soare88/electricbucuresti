@@ -70,3 +70,17 @@ class FooterPrincipal extends HTMLElement {
     }
 }
 customElements.define('footer-principal', FooterPrincipal);
+
+// =======================================================
+// FORMATARE BUTOANE CTA (ex: "Sună acum: 0765 948 524")
+// Eticheta pe primul rand, numarul de telefon pe al doilea
+// =======================================================
+document.querySelectorAll('a.cta-button').forEach((btn) => {
+    const text = btn.textContent;
+    const idx = text.indexOf(':');
+    if (idx !== -1) {
+        const label = text.slice(0, idx + 1).trim();
+        const phone = text.slice(idx + 1).trim();
+        btn.innerHTML = `${label}<br>${phone}`;
+    }
+});
