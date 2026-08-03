@@ -46,6 +46,16 @@ class HeaderPrincipal extends HTMLElement {
                 </div>
             </header>
         `;
+
+        const dropbtn = this.querySelector('.dropbtn');
+        const dropdownContent = this.querySelector('.dropdown-content');
+
+        dropbtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdownContent.classList.toggle('active');
+            }
+        });
     }
 }
 customElements.define('header-principal', HeaderPrincipal);

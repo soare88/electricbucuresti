@@ -290,11 +290,21 @@ footer a {
         background-color: transparent;
         margin-top: 0;
         padding-left: 15px;
-        display: flex;
+        display: none;
         flex-direction: column;
     }
-    
+
+    .dropdown-content.active {
+        display: flex;
+    }
+
     .dropdown-content a {
         padding: 10px 0 !important;
+    }
+
+    .dropbtn {
+        cursor: pointer;
+        justify-content: space-between;
+        width: 100%;
     }
 }
