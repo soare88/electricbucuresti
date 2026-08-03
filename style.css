@@ -138,6 +138,28 @@ a[href^="tel:"]:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+.email-float {
+    position: fixed;
+    bottom: 160px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.email-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (max-width: 768px) {
     .whatsapp-float {
         bottom: 16px;
@@ -148,6 +170,13 @@ a[href^="tel:"]:hover {
 
     .phone-float {
         bottom: 78px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .email-float {
+        bottom: 140px;
         right: 16px;
         width: 52px;
         height: 52px;
