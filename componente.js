@@ -1,4 +1,20 @@
 // =======================================================
+// GOOGLE ANALYTICS (GA4)
+// =======================================================
+(function() {
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X7DSDSM475';
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-X7DSDSM475');
+})();
+
+// =======================================================
 // SETARE FAVICON VECTORIAL (CERC ALBASTRU CU FULGER)
 // =======================================================
 (function() {
