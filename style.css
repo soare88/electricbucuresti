@@ -283,8 +283,10 @@ header {
     padding-left: 25px !important; 
 }
 
-.dropdown:hover .dropdown-content {
-    display: flex; 
+@media screen and (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: flex;
+    }
 }
 
 footer {
