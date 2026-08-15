@@ -384,6 +384,73 @@ services.forEach(service => {
             description: metaDescription
         };
 
+        // CANONICAL URL
+        const canonicalUrl = pageUrl;
+
+        // LocalBusiness Schema - Per locație
+        const localBusinessSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            'name': `${service.name} în ${zoneTitle}`,
+            'description': metaDescription,
+            'telephone': '+40765948524',
+            'url': canonicalUrl,
+            'areaServed': {
+                '@type': 'Place',
+                'name': zoneTitle,
+                'containedIn': {
+                    '@type': 'State',
+                    'name': 'București'
+                }
+            },
+            'provider': {
+                '@type': 'Organization',
+                'name': 'Electric București',
+                'telephone': '+40765948524',
+                'url': 'https://electricbucuresti.ro'
+            }
+        };
+
+        // Breadcrumb Schema
+        const breadcrumbSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'Home',
+                    'item': 'https://electricbucuresti.ro/'
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': service.name,
+                    'item': `https://electricbucuresti.ro/${service.slug}.html`
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 3,
+                    'name': zoneTitle,
+                    'item': canonicalUrl
+                }
+            ]
+        };
+
+        // FAQPage Schema
+        const faqSchema = {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            'mainEntity': faqItems.map((item) => ({
+                '@type': 'Question',
+                'name': item.q,
+                'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': item.a
+                }
+            }))
+        };
+
         const htmlContent = `<!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -391,10 +458,28 @@ services.forEach(service => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${service.name} în ${zoneTitle} | Electric București</title>
     <meta name="description" content="${metaDescription}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- CANONICAL URL - IMPORTANT! -->
+    <link rel="canonical" href="${canonicalUrl}">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ro_RO">
+    <meta property="og:title" content="${service.name} în ${zoneTitle} | Electric București">
+    <meta property="og:description" content="${metaDescription}">
+    <meta property="og:url" content="${canonicalUrl}">
+    <meta property="og:image" content="https://electricbucuresti.ro/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Linkurile au "../" pentru că paginile se află acum în interiorul folderului "locatii" -->
     <link rel="stylesheet" href="../style.css">
     <script src="../seo/seo-global.js"></script>
+    
+    <!-- SCHEMA.ORG - COMPLETE STRUCTURED DATA FOR SEO -->
+    <script type="application/ld+json">${JSON.stringify(localBusinessSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+    <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
