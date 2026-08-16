@@ -94,6 +94,7 @@ a[href^="tel:"]:hover {
     line-height: 1.5;
 }
 
+
 /* =======================================================
    BUTOANE FLOTANTE
    ======================================================= */
@@ -115,25 +116,26 @@ a[href^="tel:"]:hover {
     text-decoration: none;
 }
 
-/* WhatsApp - butonul de jos */
 .whatsapp-float {
     bottom: 16px;
     background-color: #25D366;
 }
 
-/* Telefon - 12px spațiu față de WhatsApp */
 .phone-float {
     bottom: 86px;
     background-color: var(--accent-yellow);
 }
 
-/* Email - 12px spațiu față de Telefon */
 .email-float {
     bottom: 156px;
     background-color: #ffffff;
 }
 
-/* Iconițele sunt toate centrate și au aceeași dimensiune */
+
+/* =======================================================
+   ICONIȚE BUTOANE FLOTANTE
+   ======================================================= */
+
 .whatsapp-float svg,
 .phone-float svg,
 .email-float svg {
@@ -143,6 +145,7 @@ a[href^="tel:"]:hover {
     margin: 0;
     padding: 0;
     flex-shrink: 0;
+    transform: none !important;
 }
 
 .whatsapp-float:hover,
@@ -151,6 +154,7 @@ a[href^="tel:"]:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
+
 
 /* =======================================================
    LISTE
@@ -186,6 +190,7 @@ main ul li::before, .container ul li::before {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 
 /* =======================================================
    HEADER ȘI MENIU (Aliniere perfectă pe verticală)
@@ -258,7 +263,8 @@ header {
     height: 100%;
 }
 
-.main-nav ul li a:hover, .dropbtn:hover {
+.main-nav ul li a:hover,
+.dropbtn:hover {
     color: var(--accent-yellow);
 }
 
@@ -321,6 +327,7 @@ header {
     }
 }
 
+
 /* =======================================================
    FOOTER
    ======================================================= */
@@ -339,8 +346,9 @@ footer a {
     text-decoration: none;
 }
 
+
 /* =======================================================
-   RESPONSIVE
+   RESPONSIVE - MOBIL
    ======================================================= */
 
 @media screen and (max-width: 768px) {
@@ -349,40 +357,49 @@ footer a {
         font-size: 2.2rem;
     }
 
-    /* ---------------------------------------------------
-       BUTOANE FLOTANTE - MOBIL
-       --------------------------------------------------- */
 
-    .whatsapp-float,
-    .phone-float,
-    .email-float {
-        right: 16px;
-        width: 52px;
-        height: 52px;
-    }
+    /* ===================================================
+       BUTOANE FLOTANTE - POZIȚIONARE MOBIL
+       =================================================== */
 
     .whatsapp-float {
-        bottom: 16px;
+        position: fixed !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .phone-float {
-        bottom: 78px;
+        position: fixed !important;
+        right: 16px !important;
+        bottom: 78px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .email-float {
-        bottom: 140px;
+        position: fixed !important;
+        right: 16px !important;
+        bottom: 140px !important;
+        width: 52px !important;
+        height: 52px !important;
     }
 
     .whatsapp-float svg,
     .phone-float svg,
     .email-float svg {
-        width: 26px;
-        height: 26px;
+        width: 26px !important;
+        height: 26px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
     }
 
-    /* ---------------------------------------------------
+
+    /* ===================================================
        HEADER
-       --------------------------------------------------- */
+       =================================================== */
 
     .header-inner {
         flex-direction: column;
