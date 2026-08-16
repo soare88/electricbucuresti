@@ -96,7 +96,7 @@ a[href^="tel:"]:hover {
 
 .whatsapp-float {
     position: fixed;
-    bottom: 24px;
+    bottom: 16px;
     right: 24px;
     width: 58px;
     height: 58px;
@@ -118,7 +118,7 @@ a[href^="tel:"]:hover {
 
 .phone-float {
     position: fixed;
-    bottom: 92px;
+    bottom: 80px;
     right: 24px;
     width: 58px;
     height: 58px;
@@ -169,7 +169,7 @@ a[href^="tel:"]:hover {
     }
 
     .phone-float {
-        bottom: 84px;
+        bottom: 72px;
         right: 16px;
         width: 52px;
         height: 52px;
