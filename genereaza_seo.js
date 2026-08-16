@@ -473,7 +473,7 @@ services.forEach(service => {
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Linkurile au "../" pentru că paginile se află acum în interiorul folderului "locatii" -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=2">
     <script src="../seo/seo-global.js"></script>
     
     <!-- SCHEMA.ORG - COMPLETE STRUCTURED DATA FOR SEO -->

@@ -140,7 +140,7 @@ a[href^="tel:"]:hover {
 
 .email-float {
     position: fixed;
-    bottom: 176px;
+    bottom: 190px;
     right: 24px;
     width: 58px;
     height: 58px;
@@ -176,7 +176,7 @@ a[href^="tel:"]:hover {
     }
 
     .email-float {
-        bottom: 168px;
+        bottom: 180px;
         right: 16px;
         width: 52px;
         height: 52px;
