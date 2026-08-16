@@ -80,7 +80,7 @@ class FooterPrincipal extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <footer>
-                <p>&copy; 2026 ElectricBucuresti.ro | Email: <a href="mailto:soare.soare88@gmail.com">soare.soare88@gmail.com</a> | Telefon: <a href="tel:0765948524">0765 948 524</a></p>
+                <p>&copy; 2026 ElectricBucuresti.ro | Email: <a href="mailto:contact@electricbucuresti.ro">contact@electricbucuresti.ro</a> | Telefon: <a href="tel:0765948524">0765 948 524</a></p>
             </footer>
         `;
     }
@@ -118,7 +118,7 @@ document.querySelectorAll('a.cta-button').forEach((btn) => {
 // =======================================================
 (function() {
     const emailLink = document.createElement('a');
-    emailLink.href = 'mailto:soare.soare88@gmail.com';
+    emailLink.href = 'mailto:contact@electricbucuresti.ro';
     emailLink.className = 'email-float';
     emailLink.setAttribute('aria-label', 'Trimite email');
     emailLink.innerHTML = `<svg viewBox="0 0 24 24" width="26" height="26"><path fill="#000000" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`;
