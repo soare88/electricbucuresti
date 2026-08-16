@@ -360,7 +360,7 @@ services.forEach(service => {
 
         const metaDescription = `${service.name} în ${zoneTitle}, București. ${details.metaDetail}. Electrician cu experiență, intervenții rapide. Sună: 0765 948 524.`;
 
-        const pageUrl = `https://electricbucuresti.ro/locatii/${fileName}`;
+        const pageUrl = `https://www.electricbucuresti.ro/locatii/${fileName}`;
 
         const jsonLd = {
             '@context': 'https://schema.org',
@@ -371,7 +371,7 @@ services.forEach(service => {
                 '@type': 'Electrician',
                 name: 'Electric București',
                 telephone: '+40765948524',
-                url: 'https://electricbucuresti.ro'
+                url: 'https://www.electricbucuresti.ro'
             },
             areaServed: {
                 '@type': 'Place',
@@ -407,7 +407,7 @@ services.forEach(service => {
                 '@type': 'Organization',
                 'name': 'Electric București',
                 'telephone': '+40765948524',
-                'url': 'https://electricbucuresti.ro'
+                'url': 'https://www.electricbucuresti.ro'
             }
         };
 
@@ -420,13 +420,13 @@ services.forEach(service => {
                     '@type': 'ListItem',
                     'position': 1,
                     'name': 'Home',
-                    'item': 'https://electricbucuresti.ro/'
+                    'item': 'https://www.electricbucuresti.ro/'
                 },
                 {
                     '@type': 'ListItem',
                     'position': 2,
                     'name': service.name,
-                    'item': `https://electricbucuresti.ro/${service.slug}.html`
+                    'item': `https://www.electricbucuresti.ro/${service.slug}.html`
                 },
                 {
                     '@type': 'ListItem',
@@ -469,7 +469,7 @@ services.forEach(service => {
     <meta property="og:title" content="${service.name} în ${zoneTitle} | Electric București">
     <meta property="og:description" content="${metaDescription}">
     <meta property="og:url" content="${canonicalUrl}">
-    <meta property="og:image" content="https://electricbucuresti.ro/logo.png">
+    <meta property="og:image" content="https://www.electricbucuresti.ro/logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Linkurile au "../" pentru că paginile se află acum în interiorul folderului "locatii" -->
@@ -550,11 +550,11 @@ const mainHtmlFiles = rootFiles.filter(file => {
 });
 
 mainHtmlFiles.forEach(file => {
-    sitemap += `  <url>\n    <loc>https://electricbucuresti.ro/${file}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+    sitemap += `  <url>\n    <loc>https://www.electricbucuresti.ro/${file}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
 });
 
 locationUrls.forEach(urlPath => {
-    sitemap += `  <url>\n    <loc>https://electricbucuresti.ro/${urlPath}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+    sitemap += `  <url>\n    <loc>https://www.electricbucuresti.ro/${urlPath}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
 });
 
 sitemap += '</urlset>';
