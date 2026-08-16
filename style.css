@@ -94,7 +94,6 @@ a[href^="tel:"]:hover {
     line-height: 1.5;
 }
 
-
 /* =======================================================
    BUTOANE FLOTANTE
    ======================================================= */
@@ -116,25 +115,25 @@ a[href^="tel:"]:hover {
     text-decoration: none;
 }
 
-/* WhatsApp - primul / cel mai jos */
+/* WhatsApp - butonul de jos */
 .whatsapp-float {
     bottom: 16px;
     background-color: #25D366;
 }
 
-/* Telefon - 12px distanță față de WhatsApp */
+/* Telefon - 12px spațiu față de WhatsApp */
 .phone-float {
     bottom: 86px;
     background-color: var(--accent-yellow);
 }
 
-/* Email - 12px distanță față de Telefon */
+/* Email - 12px spațiu față de Telefon */
 .email-float {
     bottom: 156px;
     background-color: #ffffff;
 }
 
-/* Centrare corectă a tuturor iconițelor */
+/* Iconițele sunt toate centrate și au aceeași dimensiune */
 .whatsapp-float svg,
 .phone-float svg,
 .email-float svg {
@@ -152,44 +151,6 @@ a[href^="tel:"]:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
-
-
-/* =======================================================
-   RESPONSIVE - BUTOANE FLOTANTE
-   ======================================================= */
-
-@media screen and (max-width: 768px) {
-    .whatsapp-float,
-    .phone-float,
-    .email-float {
-        right: 16px;
-        width: 52px;
-        height: 52px;
-    }
-
-    /* WhatsApp */
-    .whatsapp-float {
-        bottom: 16px;
-    }
-
-    /* Telefon - 10px distanță */
-    .phone-float {
-        bottom: 78px;
-    }
-
-    /* Email - 10px distanță */
-    .email-float {
-        bottom: 140px;
-    }
-
-    .whatsapp-float svg,
-    .phone-float svg,
-    .email-float svg {
-        width: 26px;
-        height: 26px;
-    }
-}
-
 
 /* =======================================================
    LISTE
@@ -226,9 +187,8 @@ main ul li::before, .container ul li::before {
     font-size: 1.2rem;
 }
 
-
 /* =======================================================
-   HEADER ȘI MENIU
+   HEADER ȘI MENIU (Aliniere perfectă pe verticală)
    ======================================================= */
 
 header {
@@ -298,8 +258,7 @@ header {
     height: 100%;
 }
 
-.main-nav ul li a:hover,
-.dropbtn:hover {
+.main-nav ul li a:hover, .dropbtn:hover {
     color: var(--accent-yellow);
 }
 
@@ -362,7 +321,6 @@ header {
     }
 }
 
-
 /* =======================================================
    FOOTER
    ======================================================= */
@@ -381,16 +339,51 @@ footer a {
     text-decoration: none;
 }
 
-
 /* =======================================================
-   RESPONSIVE - HEADER ȘI MENIU
+   RESPONSIVE
    ======================================================= */
 
 @media screen and (max-width: 768px) {
+
     h1 {
         font-size: 2.2rem;
     }
-    
+
+    /* ---------------------------------------------------
+       BUTOANE FLOTANTE - MOBIL
+       --------------------------------------------------- */
+
+    .whatsapp-float,
+    .phone-float,
+    .email-float {
+        right: 16px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .whatsapp-float {
+        bottom: 16px;
+    }
+
+    .phone-float {
+        bottom: 78px;
+    }
+
+    .email-float {
+        bottom: 140px;
+    }
+
+    .whatsapp-float svg,
+    .phone-float svg,
+    .email-float svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* ---------------------------------------------------
+       HEADER
+       --------------------------------------------------- */
+
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
