@@ -550,7 +550,8 @@ const mainHtmlFiles = rootFiles.filter(file => {
 });
 
 mainHtmlFiles.forEach(file => {
-    sitemap += `  <url>\n    <loc>https://www.electricbucuresti.ro/${file}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+    const urlPath = file === 'index.html' ? '' : file;
+    sitemap += `  <url>\n    <loc>https://www.electricbucuresti.ro/${urlPath}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
 });
 
 locationUrls.forEach(urlPath => {
