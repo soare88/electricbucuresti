@@ -27,7 +27,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-main, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel"] {
+main, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel:"]:not(.phone-float) {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -69,7 +69,7 @@ p {
     margin-bottom: 20px;
 }
 
-a[href^="tel:"] {
+a[href^="tel:"]:not(.phone-float) {
     display: inline-block;
     background: var(--accent-yellow);
     color: #000 !important;
@@ -83,7 +83,7 @@ a[href^="tel:"] {
     transition: all 0.3s ease;
 }
 
-a[href^="tel:"]:hover {
+a[href^="tel:"]:not(.phone-float):hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
     background: var(--accent-hover);
