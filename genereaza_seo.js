@@ -487,11 +487,16 @@ services.forEach(service => {
 
     <main>
         <section class="hero-local">
-            <h1>${service.name} în ${zoneTitle}</h1>
-            <p>${heroText}</p>
-            <a href="tel:0765948524" class="cta-button">Sună acum: 0765 948 524</a>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1>${service.name} în ${zoneTitle}</h1>
+                <p>${heroText}</p>
+                <div class="hero-buttons">
+                    <a href="tel:0765948524" class="btn-primary">CERE OFERTĂ RAPIDĂ</a>
+                    <a href="#servicii" class="btn-secondary">Vezi SERVICIILE NOASTRE</a>
+                </div>
+            </div>
         </section>
-        <section class="content-local">
+        <section class="content-local" id="servicii">
             <h2>De ce să ne alegi pentru ${serviceLower} în ${zoneTitle}?</h2>
             <p>${whyText}</p>
             <ul>

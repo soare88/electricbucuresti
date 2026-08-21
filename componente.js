@@ -38,11 +38,11 @@ class HeaderPrincipal extends HTMLElement {
                     <div class="logo-container">
                         <a href="index.html">
                             <svg width="34" height="34" viewBox="0 0 32 32" style="flex-shrink: 0;">
-                                <circle cx="16" cy="16" r="16" fill="#2563eb"/>
-                                <path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="#fbbf24"/>
+                                <circle cx="16" cy="16" r="16" fill="#fbbf24"/>
+                                <path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="#000000"/>
                             </svg>
 
-                            <span style="font-size: 1.25rem; font-weight: bold; color: #ffffff;">
+                            <span style="font-size: 1.25rem; font-weight: bold; color: #333333;">
                                 Electric București
                             </span>
                         </a>
