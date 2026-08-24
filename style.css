@@ -3,13 +3,13 @@
    ======================================================= */
 
 :root {
-    --bg-main: #0d0e12;       
-    --bg-card: #16181d;       
-    --text-light: #f8fafc;    
-    --text-muted: #94a3b8;    
+    --bg-main: #ffffff;       
+    --bg-card: #f7f8fa;       
+    --text-light: #1a1d23;    
+    --text-muted: #5b6472;    
     --accent-yellow: #fbbf24; 
     --accent-hover: #f59e0b;  
-    --border-glass: rgba(255, 255, 255, 0.08); 
+    --border-glass: rgba(0, 0, 0, 0.08); 
 }
 
 * {
@@ -45,7 +45,7 @@ body > h1:first-of-type {
 
 .hero-local {
     background-image:
-        linear-gradient(90deg, rgba(5,6,8,0.92) 0%, rgba(5,6,8,0.80) 30%, rgba(5,6,8,0.35) 60%, rgba(5,6,8,0.15) 100%),
+        linear-gradient(90deg, rgba(5,6,8,0.65) 0%, rgba(5,6,8,0.45) 35%, rgba(5,6,8,0.15) 65%, rgba(5,6,8,0.05) 100%),
         url('electrician-hero.png');
     background-size: cover;
     background-position: center right;
@@ -68,15 +68,17 @@ body > h1:first-of-type {
     line-height: 1.35;
     letter-spacing: 0px;
     font-weight: 800;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9);
 }
 
 .hero-local p {
     font-size: 1.05rem;
-    color: #e5e7eb;
+    color: #f3f4f6;
     margin-bottom: 30px;
     max-width: none;
     margin-left: 0;
     margin-right: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
 }
 
 .hero-buttons {
@@ -151,7 +153,7 @@ h2 {
 
 h3 {
     font-size: 1.25rem;
-    color: var(--accent-yellow);
+    color: var(--accent-hover);
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -162,7 +164,7 @@ p {
     margin-bottom: 20px;
 }
 
-a[href^="tel:"]:not(.phone-float) {
+a[href^="tel:"]:not(.phone-float):not(.btn-primary):not(.btn-secondary):not(.plain-tel) {
     display: inline-block;
     background: var(--accent-yellow);
     color: #000 !important;
@@ -176,10 +178,14 @@ a[href^="tel:"]:not(.phone-float) {
     transition: all 0.3s ease;
 }
 
-a[href^="tel:"]:not(.phone-float):hover {
+a[href^="tel:"]:not(.phone-float):not(.btn-primary):not(.btn-secondary):not(.plain-tel):hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
     background: var(--accent-hover);
+}
+
+footer a.plain-tel {
+    font-weight: normal;
 }
 
 .cta-button {
@@ -290,13 +296,13 @@ main ul li::before, .container ul li::before {
    ======================================================= */
 
 header {
-    background-color: #14161a;
+    background-color: #ffffff;
     border-bottom: 1px solid var(--border-glass);
     padding: 15px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .header-inner {
@@ -343,7 +349,7 @@ header {
 }
 
 .main-nav ul li a {
-    color: #e5e7eb;
+    color: #1f2430;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -370,9 +376,9 @@ header {
     display: none;
     position: absolute;
     flex-direction: column; 
-    background-color: var(--bg-card);
+    background-color: #ffffff;
     min-width: 240px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
     border: 1px solid var(--border-glass);
     border-radius: 8px;
     top: 100%;
@@ -392,7 +398,7 @@ header {
 }
 
 .dropdown-content a {
-    color: #e5e7eb !important;
+    color: #1f2430 !important;
     padding: 14px 20px !important;
     font-weight: 500 !important;
     border-bottom: 1px solid var(--border-glass);
@@ -408,8 +414,8 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-    color: var(--accent-yellow) !important;
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--accent-hover) !important;
     padding-left: 25px !important; 
 }
 
@@ -433,8 +439,12 @@ footer {
     margin-top: 60px;
 }
 
+footer p {
+    margin: 6px 0;
+}
+
 footer a {
-    color: var(--accent-yellow);
+    color: var(--accent-hover);
     text-decoration: none;
 }
 

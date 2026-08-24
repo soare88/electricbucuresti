@@ -99,15 +99,15 @@ class FooterPrincipal extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <footer>
-                <p>
-                    &copy; 2026 ElectricBucuresti.ro |
-                    Email:
+                <p>&copy; 2020 ElectricBucuresti.ro</p>
+                <p>Email :
                     <a href="mailto:contact@electricbucuresti.ro">
                         contact@electricbucuresti.ro
-                    </a> |
-                    Telefon:
-                    <a href="tel:0765948524">
-                        0765 948 524
+                    </a>
+                </p>
+                <p>Telefon :
+                    <a href="tel:0765948524" class="plain-tel">
+                        0765948524
                     </a>
                 </p>
             </footer>
