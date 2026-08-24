@@ -3,13 +3,13 @@
    ======================================================= */
 
 :root {
-    --bg-main: #ffffff;       
-    --bg-card: #f8f9fa;       
-    --text-light: #1a1a1a;    
-    --text-muted: #666666;    
+    --bg-main: #0d0e12;       
+    --bg-card: #16181d;       
+    --text-light: #f8fafc;    
+    --text-muted: #94a3b8;    
     --accent-yellow: #fbbf24; 
     --accent-hover: #f59e0b;  
-    --border-glass: rgba(0, 0, 0, 0.08); 
+    --border-glass: rgba(255, 255, 255, 0.08); 
 }
 
 * {
@@ -27,7 +27,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-main, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel:"]:not(.phone-float) {
+.faq-section, .container, body > h1, body > h2, body > h3, body > p, body > a[href^="tel:"]:not(.phone-float) {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -44,52 +44,55 @@ body > h1:first-of-type {
    ======================================================= */
 
 .hero-local {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23333;stop-opacity:1" /><stop offset="100%" style="stop-color:%23111;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="600"/><g opacity="0.1"><path d="M100 200 Q200 150 300 200 T500 200" stroke="white" stroke-width="2" fill="none"/><circle cx="600" cy="300" r="50" stroke="white" stroke-width="1" fill="none"/><path d="M700 100 L800 300 L900 100" stroke="white" stroke-width="2" fill="none"/></g></svg>');
+    background-image:
+        linear-gradient(90deg, rgba(5,6,8,0.92) 0%, rgba(5,6,8,0.80) 30%, rgba(5,6,8,0.35) 60%, rgba(5,6,8,0.15) 100%),
+        url('electrician-hero.png');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 500px;
+    background-position: center right;
+    min-height: 560px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
+    padding: 90px 5%;
     margin-bottom: 60px;
-    border-radius: 8px;
+}
+
+.hero-content {
+    width: 560px;
+    max-width: 100%;
 }
 
 .hero-local h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: #ffffff;
-    margin-bottom: 20px;
-    line-height: 1.3;
+    margin-bottom: 22px;
+    line-height: 1.35;
     letter-spacing: 0px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .hero-local p {
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.05rem;
+    color: #e5e7eb;
+    margin-bottom: 30px;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    display: block;
+    white-space: nowrap;
+}
+
+.hero-buttons .btn-primary {
+    margin-right: 16px;
 }
 
 .btn-primary {
     background-color: var(--accent-yellow);
     color: #000;
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    padding: 15px 28px;
+    font-size: 0.95rem;
     font-weight: bold;
     border-radius: 6px;
     text-decoration: none;
@@ -97,6 +100,7 @@ body > h1:first-of-type {
     transition: all 0.3s ease;
     display: inline-block;
     cursor: pointer;
+    flex: 0 0 auto;
 }
 
 .btn-primary:hover {
@@ -107,17 +111,18 @@ body > h1:first-of-type {
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: rgba(255,255,255,0.05);
     color: #ffffff;
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    padding: 15px 28px;
+    font-size: 0.95rem;
     font-weight: bold;
     border-radius: 6px;
     text-decoration: none;
-    border: 2px solid #ffffff;
+    border: 1.5px solid #ffffff;
     transition: all 0.3s ease;
     display: inline-block;
     cursor: pointer;
+    flex: 0 0 auto;
 }
 
 .btn-secondary:hover {
@@ -285,14 +290,13 @@ main ul li::before, .container ul li::before {
    ======================================================= */
 
 header {
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px); 
+    background-color: #14161a;
     border-bottom: 1px solid var(--border-glass);
     padding: 15px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-inner {
@@ -339,7 +343,7 @@ header {
 }
 
 .main-nav ul li a {
-    color: #333333;
+    color: #e5e7eb;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -366,9 +370,9 @@ header {
     display: none;
     position: absolute;
     flex-direction: column; 
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     min-width: 240px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
     border: 1px solid var(--border-glass);
     border-radius: 8px;
     top: 100%;
@@ -388,7 +392,7 @@ header {
 }
 
 .dropdown-content a {
-    color: #333333 !important;
+    color: #e5e7eb !important;
     padding: 14px 20px !important;
     font-weight: 500 !important;
     border-bottom: 1px solid var(--border-glass);
@@ -421,8 +425,8 @@ header {
    ======================================================= */
 
 footer {
-    background-color: #f8f9fa;
-    color: #666666;
+    background-color: var(--bg-card);
+    color: var(--text-muted);
     text-align: center;
     padding: 30px 20px;
     border-top: 1px solid var(--border-glass);
@@ -539,5 +543,43 @@ footer a {
         cursor: pointer;
         justify-content: space-between;
         width: auto;
+    }
+
+
+    /* ===================================================
+       HERO SECTION - MOBIL
+       =================================================== */
+
+    .hero-local {
+        background-image:
+            linear-gradient(180deg, rgba(5,6,8,0.75) 0%, rgba(5,6,8,0.90) 55%, rgba(5,6,8,0.95) 100%),
+            url('electrician-hero.png');
+        background-position: center;
+        min-height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-local h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-local p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        white-space: normal;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 14px;
     }
 }

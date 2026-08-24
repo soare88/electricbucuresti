@@ -37,13 +37,13 @@ class HeaderPrincipal extends HTMLElement {
                 <div class="header-inner">
                     <div class="logo-container">
                         <a href="index.html">
-                            <svg width="34" height="34" viewBox="0 0 32 32" style="flex-shrink: 0;">
+                            <svg width="38" height="38" viewBox="0 0 32 32" style="flex-shrink: 0;">
                                 <circle cx="16" cy="16" r="16" fill="#fbbf24"/>
                                 <path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="#000000"/>
                             </svg>
 
-                            <span style="font-size: 1.25rem; font-weight: bold; color: #333333;">
-                                Electric București
+                            <span style="font-size: 1rem; font-weight: bold; color: #ffffff; line-height: 1.3;">
+                                Electric<br>București
                             </span>
                         </a>
                     </div>

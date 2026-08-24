@@ -487,12 +487,12 @@ services.forEach(service => {
 
     <main>
         <section class="hero-local">
-            <div style="max-width: 800px; margin: 0 auto;">
+            <div class="hero-content">
                 <h1>${service.name} în ${zoneTitle}</h1>
                 <p>${heroText}</p>
                 <div class="hero-buttons">
                     <a href="tel:0765948524" class="btn-primary">CERE OFERTĂ RAPIDĂ</a>
-                    <a href="#servicii" class="btn-secondary">Vezi SERVICIILE NOASTRE</a>
+                    <a href="#servicii" class="btn-secondary">VEZI SERVICIILE NOASTRE</a>
                 </div>
             </div>
         </section>
