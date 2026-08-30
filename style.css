@@ -3,6 +3,7 @@
    ======================================================= */
 
 :root {
+    color-scheme: light;
     --bg-main: #ffffff;       
     --bg-card: #f7f8fa;       
     --text-light: #1a1d23;    
