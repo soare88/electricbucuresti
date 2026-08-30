@@ -63,6 +63,8 @@ class HeaderPrincipal extends HTMLElement {
                                     <a href="rezidential.html">Rezidențial</a>
                                     <a href="comercial.html">Comercial</a>
                                     <a href="panouri-solare.html">Panouri Solare</a>
+                                    <a href="tablouri-electrice.html">Tablouri Electrice</a>
+                                    <a href="automatizari.html">Automatizări</a>
                                     <a href="hvac.html">HVAC</a>
                                     <a href="curenti-slabi.html">Curenți Slabi</a>
                                 </div>
