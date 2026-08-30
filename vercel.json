@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/instalatii.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

@@ -56,13 +56,13 @@ class HeaderPrincipal extends HTMLElement {
 
                             <!-- Meniul Derulant (Dropdown) -->
                             <li class="dropdown">
-                                <a href="#" class="dropbtn">Servicii ▼</a>
+                                <a href="#" class="dropbtn">Instalații Electrice ▼</a>
 
                                 <div class="dropdown-content">
-                                    <a href="instalatii.html">Instalații Generale</a>
                                     <a href="industrial.html">Industrial</a>
                                     <a href="rezidential.html">Rezidențial</a>
                                     <a href="comercial.html">Comercial</a>
+                                    <a href="panouri-solare.html">Panouri Solare</a>
                                     <a href="hvac.html">HVAC</a>
                                     <a href="curenti-slabi.html">Curenți Slabi</a>
                                 </div>
