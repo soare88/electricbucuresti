@@ -563,7 +563,7 @@ footer a {
 
     .hero-local {
         background-image:
-            linear-gradient(180deg, rgba(5,6,8,0.75) 0%, rgba(5,6,8,0.90) 55%, rgba(5,6,8,0.95) 100%),
+            linear-gradient(180deg, rgba(5,6,8,0.50) 0%, rgba(5,6,8,0.60) 55%, rgba(5,6,8,0.68) 100%),
             url('electrician-hero.png');
         background-position: center;
         min-height: auto;
