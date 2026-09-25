@@ -42,7 +42,7 @@ class HeaderPrincipal extends HTMLElement {
                                 <path d="M17 4L6 18h9l-2 10 13-15h-9l2-9z" fill="#000000"/>
                             </svg>
 
-                            <span style="font-size: 1rem; font-weight: bold; color: #ffffff; line-height: 1.3;">
+                            <span style="font-size: 1rem; font-weight: bold; color: #1a1d23; line-height: 1.3;">
                                 Electric<br>București
                             </span>
                         </a>
