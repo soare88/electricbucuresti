@@ -47,7 +47,7 @@ body > h1:first-of-type {
 .hero-local {
     background-image:
         linear-gradient(90deg, rgba(5,6,8,0.65) 0%, rgba(5,6,8,0.45) 35%, rgba(5,6,8,0.15) 65%, rgba(5,6,8,0.05) 100%),
-        url('electrician-hero.png');
+        var(--hero-image, url('electrician-hero.png'));
     background-size: cover;
     background-position: center right;
     min-height: 560px;
@@ -564,7 +564,7 @@ footer a {
     .hero-local {
         background-image:
             linear-gradient(180deg, rgba(5,6,8,0.50) 0%, rgba(5,6,8,0.60) 55%, rgba(5,6,8,0.68) 100%),
-            url('electrician-hero.png');
+            var(--hero-image, url('electrician-hero.png'));
         background-position: center;
         min-height: auto;
         padding: 50px 20px;
