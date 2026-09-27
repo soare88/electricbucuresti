@@ -207,3 +207,39 @@ document.querySelectorAll('a.cta-button').forEach((btn) => {
 
     document.body.appendChild(waLink);
 })();
+
+
+// =======================================================
+// IMAGINE DE FUNDAL POTRIVITĂ PAGINII / SERVICIULUI
+// Paginile de cartier folosesc imaginea serviciului din titlul H1.
+// =======================================================
+(function() {
+    const hero = document.querySelector('.hero-local');
+    const title = hero?.querySelector('h1')?.textContent;
+    if (!hero || !title) return;
+
+    const normalizedTitle = title
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+
+    const imageRules = [
+        { keywords: ['panouri solare'], image: 'hero-solar.jpg' },
+        { keywords: ['hvac'], image: 'hero-hvac.jpg' },
+        { keywords: ['curenti slabi'], image: 'hero-low-voltage.jpg' },
+        { keywords: ['automatizari industriale'], image: 'hero-automation.jpg' },
+        { keywords: ['industrial'], image: 'hero-industrial.jpg' },
+        { keywords: ['comercial', 'iluminat arhitectural'], image: 'hero-commercial.jpg' },
+        { keywords: ['rezidential', 'instalatii electrice'], image: 'hero-residential.jpg' },
+        { keywords: ['tablouri electrice', 'tablou electric', 'verificari pram', 'trasee electrice'], image: 'hero-switchboard.jpg' },
+        { keywords: ['mentenanta electrica'], image: 'hero-industrial.jpg' }
+    ];
+
+    const rule = imageRules.find(({ keywords }) =>
+        keywords.some((keyword) => normalizedTitle.includes(keyword))
+    );
+
+    if (rule) {
+        hero.style.setProperty('--hero-image', `url("/${rule.image}")`);
+    }
+})();
