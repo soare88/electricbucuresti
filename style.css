@@ -594,3 +594,38 @@ footer a {
         margin-bottom: 14px;
     }
 }
+
+
+/* =======================================================
+   PREMIUM GRAPHITE + GOLD - PAGINI INTERIOARE
+   ======================================================= */
+:root{
+  color-scheme:dark;
+  --bg-main:#292f35;
+  --bg-card:#353d44;
+  --text-light:#f1f0eb;
+  --text-muted:#c0c5c7;
+  --accent-yellow:#d5ad45;
+  --accent-hover:#e5bf60;
+  --border-glass:rgba(230,232,228,.14);
+}
+body{background:#292f35;color:#f1f0eb}
+header{background:#252c32!important;border-bottom:1px solid #465058!important;box-shadow:0 8px 24px rgba(0,0,0,.18)!important}
+.logo-container span{color:#f1f0eb!important}
+.main-nav ul li a{color:#f1f0eb}
+.dropdown-content{background:#353d44;border-color:#59636b}
+.dropdown-content a{color:#f1f0eb!important;border-color:#59636b}
+.dropdown-content a:hover{background:#414b53;color:#e5bf60!important}
+.hero-local{background-image:linear-gradient(90deg,rgba(37,44,50,.94) 0%,rgba(37,44,50,.78) 45%,rgba(37,44,50,.28) 100%),url('electrician-hero.png');border:1px solid #465058;border-radius:0 0 14px 14px}
+.content-local,.faq-section,.container{color:#f1f0eb}
+h1,h2{color:#f1f0eb}
+h3{color:#e5bf60}
+p{color:#c0c5c7}
+main ul,.container ul{background:#353d44;border-color:#59636b}
+main ul li,.container ul li{color:#f1f0eb}
+footer{background:#1d2328;color:#c0c5c7;border-color:#465058}
+footer a{color:#e5bf60}
+.btn-primary{background:#d5ad45;border-color:#d5ad45;color:#202830}
+.btn-secondary{border-color:#e6e8e4;color:#f1f0eb}
+.phone-float,.email-float{background:#d5ad45}
+@media(max-width:768px){.hero-local{background-image:linear-gradient(180deg,rgba(37,44,50,.78),rgba(37,44,50,.94)),url('electrician-hero.png')}}
